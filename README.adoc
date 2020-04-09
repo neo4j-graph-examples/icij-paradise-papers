@@ -1,0 +1,34 @@
+:name: icij-paradise-papers 
+:long_name: Paradise Papers by ICIJ
+:description: The Paradise Papers dataset and guide from the International Consortium of Investigative Journalists (ICIJ).
+:icon: 
+:logo: 
+:tags: fraud, paradise papers
+:author:
+:use-load-script: 
+:use-dump-file: https://graph-examples-dump-files.s3.amazonaws.com/icij-paradise-papers.dump
+:use-plugin: 
+:target-db-version: 3.5.14
+:bloom-perspective: 
+:guide: 
+:rendered-guide: https://guides.neo4j.com/sandbox/icij-paradise-papers/index.html
+:model: documentation/img/datamodel.png
+:model-guide:
+:todo: Locate the raw guide, locate the associated logo/icons
+image::{logo}[]
+
+= {long_name} Graph Example
+
+Description: {description}
+
+TODO: {todo}
+
+image::{model}[]
+
+=== Setup
+
+This is for version: {target-db-version}
+
+unrendered guide: {guide}
+
+rendered guide available from: {rendered-guide}
