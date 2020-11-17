@@ -1,34 +1,64 @@
 :name: icij-paradise-papers 
 :long_name: Paradise Papers by ICIJ
-:description: The Paradise Papers dataset and guide from the International Consortium of Investigative Journalists (ICIJ).
+:description: The Paradise Papers dataset and guide from the International Consortium of Investigative Journalists (ICIJ)
 :icon: 
-:logo: 
-:tags: fraud, paradise papers
-:author:
+:logo: documentation/img/icij-logo.png
+:tags: example-data,dataset,fraud-data,data-leaks,paradise-papers, icij
+:author: William Lyon
 :use-load-script: 
-:use-dump-file: https://graph-examples-dump-files.s3.amazonaws.com/icij-paradise-papers.dump
+:data:
+:use-dump-file: data/icij-paradise-papers-40.dump
 :use-plugin: 
 :target-db-version: 3.5.14
-:bloom-perspective: 
-:guide: 
+:bloom-perspective: bloom/icij-paradise-papers.bloom-perspective
+:guide: documentation/icij-paradise-papers.neo4j-browser-guide
 :rendered-guide: https://guides.neo4j.com/sandbox/icij-paradise-papers/index.html
 :model: documentation/img/datamodel.png
+:example: documentation/img/example.png
+
+:query: MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b)
+RETURN b.name as name LIMIT 20
+
+:param-name: name
+:param-value: Ross, Jr. - Wilbur Louis
+:result-column: name
+:expected-result: WLR/TRF Shipping GP Ltd.
+
 :model-guide:
-:todo: Locate the raw guide, locate the associated logo/icons
-image::{logo}[]
+:todo: 
+image::{logo}[width=200]
 
 = {long_name} Graph Example
 
-Description: {description}
+Description: _{description}_
 
-TODO: {todo}
-
+.Model
 image::{model}[]
+
+.Example
+image::{example}[width=600]
+
+.Example Query:
+[source,cypher,subs=attributes]
+----
+{query}
+----
 
 === Setup
 
-This is for version: {target-db-version}
+This is for Neo4j version: `{target-db-version}`
 
-unrendered guide: {guide}
+Rendered guide available from: `:play icij-paradise-papers` 
+// or `:play {rendered-guide}``
 
-rendered guide available from: {rendered-guide}
+Unrendered guide: link:{guide}[]
+
+Data files: `{use-dump-file}`
+
+=== Code Examples
+
+* link:code/javascript/example.js[JavaScript]
+* link:code/java/Example.java[Java]
+* link:code/csharp/Example.cs[C#]
+* link:code/python/example.py[Python]
+* link:code/go/example.go[Go]
