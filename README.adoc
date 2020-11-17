@@ -16,8 +16,8 @@
 :model: documentation/img/datamodel.png
 :example: documentation/img/example.png
 
-:query: MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b)
-RETURN b.name as name LIMIT 20
+:query: MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b) +
+RETURN b.name as name LIMIT 20 +
 
 :param-name: name
 :param-value: Ross, Jr. - Wilbur Louis
