@@ -26,7 +26,7 @@ RETURN b.name as name LIMIT 20 +
 
 :model-guide:
 :todo: 
-image::{logo}[width=200]
+image::{logo}[width=100]
 
 = {long_name} Graph Example
 
