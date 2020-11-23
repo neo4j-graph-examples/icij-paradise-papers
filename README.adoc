@@ -1,5 +1,5 @@
-:name: icij-paradise-papers 
-:long_name: Paradise Papers by ICIJ
+:name: icij-paradise-papers
+:long-name: Paradise Papers by ICIJ
 :description: The Paradise Papers dataset and guide from the International Consortium of Investigative Journalists (ICIJ)
 :icon: 
 :logo: documentation/img/icij-logo.png
@@ -28,7 +28,7 @@ RETURN b.name as name LIMIT 20 +
 :todo: 
 image::{logo}[width=100]
 
-= {long_name} Graph Example
+== {long-name} Graph Example
 
 Description: _{description}_
 
