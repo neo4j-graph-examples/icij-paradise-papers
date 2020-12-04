@@ -1,7 +1,7 @@
 {
     "name": "icij-paradise-papers",
     "description":"The Paradise Papers dataset and guide from the International Consortium of Investigative Journalists (ICIJ)",
-    "install": [
+    "dbms": [
         {
             "dumpFile": "data/icij-paradise-papers-35.dump",
             "targetNeo4jVersion":"3.5"
