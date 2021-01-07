@@ -30,7 +30,7 @@ func runQuery(uri, database, username, password string) (result []string, err er
 	results, err := session.ReadTransaction(func(transaction neo4j.Transaction) (interface{}, error) {
 		result, err := transaction.Run(
 			`
-			MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b)
+			MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b) 
 			RETURN b.name as name LIMIT 20
 			`, map[string]interface{}{
 				"name": "Ross, Jr. - Wilbur Louis",
