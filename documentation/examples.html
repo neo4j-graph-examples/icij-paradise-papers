@@ -412,7 +412,7 @@ RETURN o1,o2,apoc.create.vRelationship(o1,'JOINT',{freq:freq,entities:[e IN enti
         class="cypher language-cypher">MATCH (a:Officer),(b:Officer)
 WHERE a.name CONTAINS '<span value-key="officerOne">Smith</span>' AND b.name CONTAINS '<span value-key="officerTwo">Grant</span>'
 WITH a,b LIMIT 20000
-MATCH p=allShortestPaths((a)-[:OFFICER_OF|:INTERMEDIARY_OF|:REGISTERED_ADDRESS*..10]-(b))
+MATCH p=allShortestPaths((a)-[:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b))
 RETURN p
 LIMIT 50</code></pre>
                         </div>
@@ -860,7 +860,6 @@ ORDER BY count DESC</code></pre>
             </ul>
           </div>
         </div>
-        <div class="box-max"><img class="img-responsive img-thumbnail" src="https://panamapapers.icij.org/assets/logo_icij_complete.png" width="300">
       </div>
       
     <br/>

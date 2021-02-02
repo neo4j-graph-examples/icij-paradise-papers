@@ -99,7 +99,7 @@
         <pre mode="cypher"  class="highlight pre-scrollable code runnable standalone-example ng-binding"><code class="cypher language-cypher">MATCH (a:Officer),(b:Officer)
 WHERE a.name CONTAINS 'Ross, Jr' 
   AND b.name CONTAINS 'Grant'
-MATCH p=allShortestPaths((a)-[:OFFICER_OF|:INTERMEDIARY_OF|:REGISTERED_ADDRESS*..10]-(b))
+MATCH p=allShortestPaths((a)-[:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b))
 RETURN p
 LIMIT 50</code></pre>
 
@@ -221,7 +221,6 @@ ORDER BY frequency DESC LIMIT 20;</code></pre>
             </ul>
           </div>
         </div>
-        <div class="box-max"><img class="img-responsive img-thumbnail" src="https://panamapapers.icij.org/assets/logo_icij_complete.png" width="300">
       </div>
       
     <br/>
