@@ -185,9 +185,9 @@ ORDER BY frequency DESC LIMIT 20;</code></pre>
       <li>
       <p><code>(:Intermediary)-[:INTERMEDIARY_OF]-&gt;(:Entity)</code></p>
       </li>
-      <li>
+      <!--li>
       <p><code>(:Officer|Intermediary)-[:UNDERLYING]-&gt;(:Intermediary|Officer)</code></p>
-      </li>
+      </li-->
       <li>
       <p><code>(:Intermediary|Officer|Entity)-[:REGISTERED_ADDRESS]-&gt;(:Address)</code></p>
       </li>
@@ -508,7 +508,7 @@ RETURN fromLabel, relType,toLabels,frequency ORDER BY frequency DESC;</code></pr
   </div>
 
 
-  <div class="ulist">
+  <!--div class="ulist">
     <ul>
       <li>
         <p><code>(:Officer|Intermediary)-[:UNDERLYING]-&gt;(:Intermediary|Officer)</code> These are relationships such as <code>NOMINEE_DIRECTOR_OF</code>, representing people that are acting as nominees of others. This applies to all relationship types beginning with <code>NOMINEE_</code> </p>
@@ -520,7 +520,7 @@ RETURN fromLabel, relType,toLabels,frequency ORDER BY frequency DESC;</code></pr
     <div class="content">
       <pre mode="cypher"  class="highlight pre-scrollable code runnable standalone-example ng-binding"><code class="cypher language-cypher">MATCH p=(o:Officer)-[:NOMINEE_DIRECTOR_OF]-&gt;(:Intermediary) RETURN p LIMIT 25;</code></pre>
     </div>
-  </div>
+  </div-->
 
   
 	
