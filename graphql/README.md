@@ -1,6 +1,6 @@
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://codesandbox.io/s/github/neo4j-graph-examples/icij-paradise-papers/tree/main/graphql?file=/schema.graphql)
 
-# Recommendations GraphQL API
+# GraphQL API
 
 This directory contains a Node.js GraphQL API application using [`@neo4j/graphql`](https://www.npmjs.com/package/@neo4j/graphql).
 
