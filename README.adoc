@@ -17,14 +17,6 @@
 :model: documentation/img/datamodel.png
 :example: documentation/img/example.png
 
-:query: MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b) +
-RETURN b.name as name LIMIT 20 +
-
-:param-name: name
-:param-value: Ross, Jr. - Wilbur Louis
-:result-column: name
-:expected-result: WLR/TRF Shipping GP Ltd.
-
 :todo: false
 image::{icon}[width=100]
 
@@ -43,9 +35,10 @@ image::{model}[]
 image::{example}[width=600]
 
 .Example Query:
-[source,cypher,subs=attributes]
+[source,cypher,role=query-example,param-name=name,param-value="Ross, Jr. - Wilbur Louis",result-column=name,expected-result="WLR/TRF Shipping GP Ltd."]
 ----
-{query}
+MATCH (a:Officer {name:$name})-[r:OFFICER_OF|INTERMEDIARY_OF|REGISTERED_ADDRESS*..10]-(b)
+RETURN b.name as name LIMIT 20
 ----
 
 === Setup
