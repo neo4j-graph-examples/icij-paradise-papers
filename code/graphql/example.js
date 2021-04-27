@@ -27,9 +27,9 @@ const typeDefs = /* GraphQL */ `
     type: String
     valid_until: String!
     registered_address: [Address]
-      @relationship(type: "REGISTERED_ADDRESS", direction: "OUT")
-    officers: [Officer] @relationship(type: "OFFICER_OF", direction: "IN")
-    others: [Other] @relationship(type: "INTERMEDIARY_OF", direction: "IN")
+      @relationship(type: "REGISTERED_ADDRESS", direction: OUT)
+    officers: [Officer] @relationship(type: "OFFICER_OF", direction: IN)
+    others: [Other] @relationship(type: "INTERMEDIARY_OF", direction: IN)
   }
 
   type Other {
@@ -44,8 +44,8 @@ const typeDefs = /* GraphQL */ `
     status: String
     valid_until: String!
     intermediary_of: [Entity]
-      @relationship(type: "INTERMEDIARY_OF", direction: "OUT")
-    same_name_as: [Entity] @relationship(type: "SAME_NAME_AS", direction: "OUT")
+      @relationship(type: "INTERMEDIARY_OF", direction: OUT)
+    same_name_as: [Entity] @relationship(type: "SAME_NAME_AS", direction: OUT)
   }
 
   type Intermediary {
@@ -55,8 +55,8 @@ const typeDefs = /* GraphQL */ `
     node_id: String!
     sourceID: String!
     valid_until: String!
-    connected_to: [Entity] @relationship(type: "CONNECTED_TO", direction: "OUT")
-    same_name_as: [Entity] @relationship(type: "SAME_NAME_AS", direction: "OUT")
+    connected_to: [Entity] @relationship(type: "CONNECTED_TO", direction: OUT)
+    same_name_as: [Entity] @relationship(type: "SAME_NAME_AS", direction: OUT)
   }
 
   type Officer {
@@ -68,11 +68,11 @@ const typeDefs = /* GraphQL */ `
     sourceID: String!
     valid_until: String!
     registered_address: [Address]
-      @relationship(type: "REGISTERED_ADDRESS", direction: "OUT")
-    officer_of: [Entity] @relationship(type: "OFFICER_OF", direction: "OUT")
-    connected_to: [Entity] @relationship(type: "CONNECTED_TO", direction: "OUT")
-    same_name_as: [Entity] @relationship(type: "SAME_NAME_AS", direction: "OUT")
-    same_id_as: [Officer] @relationship(type: "SAME_ID_AS", direction: "OUT")
+      @relationship(type: "REGISTERED_ADDRESS", direction: OUT)
+    officer_of: [Entity] @relationship(type: "OFFICER_OF", direction: OUT)
+    connected_to: [Entity] @relationship(type: "CONNECTED_TO", direction: OUT)
+    same_name_as: [Entity] @relationship(type: "SAME_NAME_AS", direction: OUT)
+    same_id_as: [Officer] @relationship(type: "SAME_ID_AS", direction: OUT)
     num_of_connected_entities: Int
       @cypher(
         statement: """
@@ -90,10 +90,8 @@ const typeDefs = /* GraphQL */ `
     node_id: String!
     sourceID: String!
     valid_until: String!
-    officers: [Officer]
-      @relationship(type: "REGISTERED_ADDRESS", direction: "IN")
-    entities: [Entity]
-      @relationship(type: "REGISTERED_ADDRESS", direction: "IN")
+    officers: [Officer] @relationship(type: "REGISTERED_ADDRESS", direction: IN)
+    entities: [Entity] @relationship(type: "REGISTERED_ADDRESS", direction: IN)
   }
 `;
 
