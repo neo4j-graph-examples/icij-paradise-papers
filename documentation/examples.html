@@ -625,6 +625,15 @@ ORDER BY number DESC LIMIT 10</code></pre>
                         </div>
                     </div>
                     <div class="paragraph">
+                        <p>The index needs to be populated first, which takes between 30 and 60 seconds. You can run the following command to check the current status. And re-run it with the little circular re-run icon in the frame.</p>
+                    </div>
+                    <div class="listingblock">
+                        <div class="content">
+<pre mode="cypher" class="highlight pre-scrollable code runnable standalone-example ng-binding"><code
+        class="cypher language-cypher">call db.indexDetails('offshore')</code></pre>
+                        </div>
+                    </div>
+                    <div class="paragraph">
                         <p>We can now use this index to search for any text contained in the properties. As a result of
                             the query you'll get the nodes with matching text.</p>
                     </div>
@@ -635,7 +644,7 @@ ORDER BY number DESC LIMIT 10</code></pre>
                     </div>
 
                     <div class="paragraph">
-                        <p>If you enter a word into the form, all occurrences will be found (but limited to 100
+                        <p>If you enter a word into the form, all occurrences will be found (but limited to 10
                             results).</p>
                     </div>
 
@@ -672,7 +681,7 @@ ORDER BY number DESC LIMIT 10</code></pre>
                         <div class="content">
                             <pre mode="cypher"
                                  class="highlight pre-scrollable code runnable standalone-example ng-binding"><code
-                                    class="cypher language-cypher">CALL db.index.fulltext.queryNodes('offshore', 'service_provider:"Appleby"')</code></pre>
+                                    class="cypher language-cypher">CALL db.index.fulltext.queryNodes('offshore', 'service_provider:"Appleby"',{limit:10})</code></pre>
                         </div>
                     </div>
                     <h4>Test it yourself:</h4>
